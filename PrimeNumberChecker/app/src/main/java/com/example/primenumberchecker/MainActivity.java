@@ -28,14 +28,11 @@ public class MainActivity extends AppCompatActivity {
         checkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String input = inputNumber.getText().toString();
 
-                if (input.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please enter a number", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                int number = input.isEmpty() ? -1 : Integer.parseInt(input);
 
-                int number = Integer.parseInt(input);  // Convert input to integer
                 if (isPrime(number)) {
                     resultMessage.setText("It is a prime number.");
                 } else {
